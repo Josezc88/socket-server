@@ -4,9 +4,9 @@ import bodyParser = require("body-parser");
 import cors = require("cors");
 
 
-const server = new Server();
+const server = Server.getInstance();
 
-// BosyParser
+// BodyParser
 server.app.use(bodyParser.urlencoded({ extended: true }));
 server.app.use(bodyParser.json());
 
