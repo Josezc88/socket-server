@@ -26,11 +26,18 @@ import * as socket from '../sockets/sockets';
      private escucharSockets() {
          console.log("Escuchando conexiones!!!");
          this.io.on( 'connection' , cliente => {
-            console.log('Cliente Conectado...');
+            //console.log('Cliente Conectado...');
             
+            //Conectar cliente
+            socket.conectarCliente(cliente);
+
+            // Configurar usuario
+            socket.configurar(cliente, this.io);
             // Desconectar
             socket.desconectar(cliente);
+            // Recibir mensaje
             socket.mensaje(cliente, this.io);
+            
          });
      }
 
