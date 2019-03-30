@@ -27,7 +27,7 @@ export class UsuariosLista {
     }
 
     public getLista() {
-        return this.lista;
+        return this.lista.filter(usuario => usuario.nombre !== 'No definido');
     }
 
     public getUsuario(id: string){

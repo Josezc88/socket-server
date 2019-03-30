@@ -29,15 +29,16 @@ import * as socket from '../sockets/sockets';
             //console.log('Cliente Conectado...');
             
             //Conectar cliente
-            socket.conectarCliente(cliente);
+            socket.conectarCliente(cliente, this.io);
 
             // Configurar usuario
             socket.configurar(cliente, this.io);
             // Desconectar
-            socket.desconectar(cliente);
+            socket.desconectar(cliente, this.io);
             // Recibir mensaje
             socket.mensaje(cliente, this.io);
-            
+            // Obtener Usuarios
+            socket.obtenerUsuarios(cliente, this.io);
          });
      }
 
